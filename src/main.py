@@ -13,7 +13,6 @@ class Bot(discord.Bot):
 
 
     async def on_ready(self):
-        self.logger.info(f'Logged in as {self.user} (ID: {self.user.id})')
         await self.load_cogs()
         await self.sync_commands()
 
@@ -31,3 +30,4 @@ class Bot(discord.Bot):
 
 bot = Bot()
 bot.run(os.getenv("DISCORD_TOKEN"))
+
