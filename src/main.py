@@ -11,8 +11,9 @@ class Bot(discord.Bot):
         intents = discord.Intents.all()
         super().__init__(intents=intents)
 
-    async def on_ready(self):
 
+    async def on_ready(self):
+        self.logger.info(f'Logged in as {self.user} (ID: {self.user.id})')
         await self.load_cogs()
 
     async def load_cogs(self):
