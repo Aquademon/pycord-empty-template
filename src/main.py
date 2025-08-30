@@ -15,6 +15,7 @@ class Bot(discord.Bot):
     async def on_ready(self):
         self.logger.info(f'Logged in as {self.user} (ID: {self.user.id})')
         await self.load_cogs()
+        await self.sync_commands()
 
     async def load_cogs(self):
         for root, _, files in os.walk("./src/cogs"):
